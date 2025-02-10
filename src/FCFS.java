@@ -1,7 +1,7 @@
 import java.util.*;
 
 class FCFS {
-    private ArrayList<Process> processes;
+    private final ArrayList<Process> processes;
 
     public FCFS(ArrayList<Process> processes) {
         this.processes = new ArrayList<>(processes);
