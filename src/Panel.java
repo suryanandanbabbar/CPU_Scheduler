@@ -2,10 +2,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-public class Panel extends JFrame {
+class Panel extends JFrame {
     private JPanel inputPanel;
     private JComboBox<String> algorithmSelector;
     private JTextArea resultArea;
+    private ArrayList<Process> processes;
 
     public Panel() {
         setTitle("CPU Scheduler Simulator");
@@ -29,7 +30,6 @@ public class Panel extends JFrame {
 
         addProcessRow();
 
-        // Add Process Button
         JButton addProcessButton = new JButton("Add Process");
         addProcessButton.addActionListener(e -> addProcessRow());
         inputPanel.add(addProcessButton);
@@ -38,6 +38,10 @@ public class Panel extends JFrame {
 
         // Algorithm Selector
         JPanel algorithmPanel = new JPanel();
+        algorithmPanel.setBorder(BorderFactory.createTitledBorder("Algorithm"));
+
+        algorithmSelector = new JComboBox<>(new String[]{"FCFS"});
+        algorithmPanel.add(new JLabel("Select Algorithm: "));
         algorithmPanel.add(algorithmSelector);
 
         add(algorithmPanel, BorderLayout.CENTER);
@@ -48,7 +52,7 @@ public class Panel extends JFrame {
         JScrollPane scrollPane = new JScrollPane(resultArea);
         scrollPane.setBorder(BorderFactory.createTitledBorder("Results"));
 
-        add(scrollPane, BorderLayout.CENTER);
+        add(scrollPane, BorderLayout.SOUTH);
 
         // Simulate Button
         JButton simulateButton = new JButton("Simulate");
@@ -57,17 +61,20 @@ public class Panel extends JFrame {
     }
 
     private void addProcessRow() {
-        // Process ID
         JTextField idField = new JTextField();
         idField.setToolTipText("Enter Process ID");
+//        idField.setText("Process ID");
+//        idField.setForeground(Color.BLUE);
 
-        // Arrival Time
         JTextField arrivalField = new JTextField();
         arrivalField.setToolTipText("Enter Arrival Time");
+//        arrivalField.setText("Arrival Time");
+//        arrivalField.setForeground(Color.GREEN);
 
-        // Burst Time
         JTextField burstField = new JTextField();
         burstField.setToolTipText("Enter Burst Time");
+//        burstField.setText("Burst Time");
+//        burstField.setForeground(Color.RED);
 
         inputPanel.add(idField);
         inputPanel.add(arrivalField);
@@ -81,9 +88,9 @@ public class Panel extends JFrame {
         try {
             processes.clear();
 
+            // Collect data only from JTextField rows added for processes
             Component[] components = inputPanel.getComponents();
-
-            // Skipping the header row
+            for (int i = 4; i < components.length; i += 3) { // Skip the header row
                 if (components[i] instanceof JTextField &&
                         components[i + 1] instanceof JTextField &&
                         components[i + 2] instanceof JTextField) {
@@ -95,12 +102,13 @@ public class Panel extends JFrame {
                 }
             }
 
+            // Select algorithm and simulate
             String algorithm = (String) algorithmSelector.getSelectedItem();
+            if ("FCFS".equals(algorithm)) {
                 FCFS fcfs = new FCFS(processes);
                 resultArea.setText(fcfs.simulate());
             }
         } catch (Exception e) {
-            // ERROR Message Dialog Box
             JOptionPane.showMessageDialog(this, "Invalid Input: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
