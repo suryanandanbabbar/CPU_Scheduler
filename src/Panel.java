@@ -17,7 +17,7 @@ class Panel extends JFrame {
         processes = new ArrayList<>();
 
         // Input Panel
-        inputPanel = new JPanel(new GridLayout(0, 4, 10, 10));
+        inputPanel = new JPanel(new GridLayout(0, 3, 10, 10));
         inputPanel.setBorder(BorderFactory.createTitledBorder("Process Input"));
 
         JLabel idLabel = new JLabel("Process ID");
@@ -30,9 +30,9 @@ class Panel extends JFrame {
 
         addProcessRow();
 
-        JButton addProcessButton = new JButton("Add Process");
-        addProcessButton.addActionListener(e -> addProcessRow());
-        inputPanel.add(addProcessButton);
+//        JButton addProcessButton = new JButton("Add Process");
+//        addProcessButton.addActionListener(e -> addProcessRow());
+//        add(addProcessButton, BorderLayout.NORTH);
 
         add(inputPanel, BorderLayout.NORTH);
 
@@ -55,6 +55,10 @@ class Panel extends JFrame {
         add(scrollPane, BorderLayout.SOUTH);
 
         // Simulate Button
+        JButton addProcessButton = new JButton("Add Process");
+        addProcessButton.addActionListener(e -> addProcessRow());
+        add(addProcessButton, BorderLayout.WEST);
+
         JButton simulateButton = new JButton("Simulate");
         simulateButton.addActionListener(e -> simulate());
         add(simulateButton, BorderLayout.EAST);
@@ -90,7 +94,7 @@ class Panel extends JFrame {
 
             // Collect data only from JTextField rows added for processes
             Component[] components = inputPanel.getComponents();
-            for (int i = 4; i < components.length; i += 3) { // Skip the header row
+            for (int i = 3; i < components.length; i += 3) { // Skip the header row
                 if (components[i] instanceof JTextField &&
                         components[i + 1] instanceof JTextField &&
                         components[i + 2] instanceof JTextField) {
@@ -101,6 +105,10 @@ class Panel extends JFrame {
                     processes.add(new Process(id, arrival, burst));
                 }
             }
+
+            // Debugging
+            System.out.println("Collected Processes:");
+            processes.forEach(p -> System.out.println("ID: " + p.id + ", Arrival: " + p.arrivalTime + ", Burst: " + p.burstTime));
 
             // Select algorithm and simulate
             String algorithm = (String) algorithmSelector.getSelectedItem();
