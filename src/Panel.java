@@ -30,10 +30,6 @@ class Panel extends JFrame {
 
         addProcessRow();
 
-//        JButton addProcessButton = new JButton("Add Process");
-//        addProcessButton.addActionListener(e -> addProcessRow());
-//        add(addProcessButton, BorderLayout.NORTH);
-
         add(inputPanel, BorderLayout.NORTH);
 
         // Algorithm Selector
@@ -54,11 +50,12 @@ class Panel extends JFrame {
 
         add(scrollPane, BorderLayout.SOUTH);
 
-        // Simulate Button
+        // Add Processes Button
         JButton addProcessButton = new JButton("Add Process");
         addProcessButton.addActionListener(e -> addProcessRow());
         add(addProcessButton, BorderLayout.WEST);
 
+        // Simulate Button
         JButton simulateButton = new JButton("Simulate");
         simulateButton.addActionListener(e -> simulate());
         add(simulateButton, BorderLayout.EAST);
