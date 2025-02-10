@@ -6,7 +6,7 @@ public class Panel extends JFrame {
     private JPanel inputPanel;
     private JComboBox<String> algorithmSelector;
     private JTextArea resultArea;
-    private ArrayList<String> processes;
+    private ArrayList<Process> processes;
 
     public Panel() {
         setTitle("CPU Scheduler Simulator");
@@ -39,7 +39,10 @@ public class Panel extends JFrame {
 
         // Algorithm Selector
         JPanel algorithmPanel = new JPanel();
-        algorithmSelector.setBorder(BorderFactory.createTitledBorder("Algorithm Selector"));
+        algorithmPanel.setBorder(BorderFactory.createTitledBorder("Algorithm"));
+
+        algorithmSelector = new JComboBox<>(new String[]{"FCFS"});
+        algorithmPanel.add(new JLabel("Select Algorithm: "));
         algorithmPanel.add(algorithmSelector);
 
         add(algorithmPanel, BorderLayout.CENTER);
@@ -86,9 +89,9 @@ public class Panel extends JFrame {
             Component[] components = inputPanel.getComponents();
 
             // Skipping the header row
-            for(int i = 4; i < components.length; i += 3) {
-                if(components[i] instanceof JTextField &&
-                    components[i + 1] instanceof JTextField &&
+            for (int i = 4; i < components.length; i += 3) { // Skip the header row
+                if (components[i] instanceof JTextField &&
+                        components[i + 1] instanceof JTextField &&
                         components[i + 2] instanceof JTextField) {
 
                     int id = Integer.parseInt(((JTextField) components[i]).getText().trim());
@@ -99,7 +102,7 @@ public class Panel extends JFrame {
             }
 
             String algorithm = (String) algorithmSelector.getSelectedItem();
-            if("".equals(algorithm)) {
+            if("FCFS".equals(algorithm)) {
                 FCFS fcfs = new FCFS(processes);
                 resultArea.setText(fcfs.simulate());
             }
