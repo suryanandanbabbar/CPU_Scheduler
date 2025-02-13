@@ -51,5 +51,6 @@ The CPU Scheduler Simulator is an interactive Java-based application designed to
 ## Credits
 - Developers:
   - Archit Sharma (https://github.com/archit-sharma-10)
+  - Praneet Kaur (https://github.com/iamPraneetkaur)
   - Suryanandan Babbar (https://github.com/suryanandanbabbar)
 - Special Thanks: Dr. Anudeep Goraya, Professor(CSE), Lovely Professional University, Phagwara, Punjab.
