@@ -2,7 +2,7 @@
 CPU Scheduler Simulator
 
 ## Project Description
-The CPU Scheduler Simulator is an interactive Java-based application designed to simulate CPU scheduling algorithms. The simulator enables users to input processes with specific arrival times, burst times, and priorities. It provides real-time visualizations such as Gantt charts and calculates performance metrics like average waiting time and turnaround time. This tool helps users understand the working of various CPU scheduling techniques like FCFS (First Come First Serve).
+The CPU Scheduler Simulator is an interactive Java-based application designed to simulate CPU scheduling algorithms. The simulator enables users to input processes with specific arrival times, burst times, and priorities. It provides real-time visualizations such as Gantt charts and calculates performance metrics like average waiting time and average turnaround time. This simulator helps users understand the working of various CPU scheduling techniques like FCFS (First Come First Serve).
 
 ### Key Features
 - Simulates FCFS (First Come First Serve) algorithm.
@@ -16,10 +16,10 @@ The CPU Scheduler Simulator is an interactive Java-based application designed to
 
 ### Challenges and Future Enhancements
 - Challenges: Designing a flexible UI to dynamically accept input rows and display accurate results.
-- Future Features: Adding support for SJF (Shortest Job First), Round Robin, and Priority Scheduling algorithms, along with additional visualizations.
+- Future Features: Adding support for SJF (Shortest Job First), SRTF(Shortest Remaining Time First) and Round Robin.
 
 ## How to Use the Project
-1. Launch the application by running the main file.
+1. Launch the application by running the main file (use main branch).
 2. Use the input panel to enter process details:
    - Process ID: A unique identifier for each process.
    - Arrival Time: Time at which the process arrives.
