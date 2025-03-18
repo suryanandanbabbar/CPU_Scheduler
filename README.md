@@ -1,10 +1,8 @@
 # Graphical User Interface(GUI)
-
-## Overview
 This branch introduces a graphical user interface (GUI) for simulating CPU scheduling algorithms. The interface allows users to input process details, select a scheduling algorithm, and visualize the execution order using a Gantt chart.
 
 ## Features
-- **User-friendly GUI**: Built with Java Swing.
+- **User-friendly GUI**: Built with *Java Swing*.
 - **Process Input Panel**: Users can add multiple processes dynamically.
 - **Algorithm Selection**: Currently supports First-Come-First-Serve (FCFS).
 - **Results Display**: Shows Gantt chart, average waiting time, and turnaround time.
