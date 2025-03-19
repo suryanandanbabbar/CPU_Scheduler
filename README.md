@@ -15,16 +15,24 @@ This branch implements the **First Come, First Served (FCFS)** CPU Scheduling Al
 4. **Click Simulate** to generate the Gantt Chart and Performance Metrics.
 
 ## Example Output
+Process(Process ID, Arrival Time, Burst Time, Priority)
+### Input:
+```
+P1(1, 0, 2)
+P2(2, 0, 3)
+P3(3, 0, 1)
+```
+
 ### Gantt Chart:
 ```
-[P1: 0 - 4]
-[P2: 4 - 9]
-[P3: 9 - 12]
+[P1: 0 - 2]
+[P2: 2 - 5]
+[P3: 5 - 6]
 ```
 ### Metrics:
 ```
-Average Waiting Time: 3.67
-Average Turnaround Time: 7.33
+Average Waiting Time: 2.33
+Average Turnaround Time: 4.33
 ```
 
 ## Contributor
