@@ -27,13 +27,5 @@ Average Waiting Time: 3.67
 Average Turnaround Time: 7.33
 ```
 
-## File Structure
-```
-│── SchedulerGUI.java   # Main GUI Interface
-│── FCFS.java           # FCFS Scheduling Logic
-│── Process.java        # Process Model
-│── README.md           # Documentation
-```
-
 ## Contributor
 Suryanandan Babbar(https://github.com/suryanandanbabbar)
