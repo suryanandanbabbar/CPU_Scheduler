@@ -1,4 +1,4 @@
-# Graphical User Interfac(GUI)
+# Graphical User Interface(GUI)
 
 ## Overview
 This branch introduces a graphical user interface (GUI) for simulating CPU scheduling algorithms. The interface allows users to input process details, select a scheduling algorithm, and visualize the execution order using a Gantt chart.
