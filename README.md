@@ -17,5 +17,7 @@ This branch introduces a graphical user interface (GUI) for simulating CPU sched
 - Enhance Gantt chart visualization with better UI components
 - Implement real-time process execution simulation
 
-## Contributor
-Suryanandan Babbar(https://github.com/suryanandanbabbar)
+##  Contributor
+- Archit Sharma()
+- Praneet Kaur()
+- Suryanandan Babbar(https://github.com/suryanandanbabbar)
