@@ -18,6 +18,6 @@ This branch introduces a graphical user interface (GUI) for simulating CPU sched
 - Implement real-time process execution simulation
 
 ##  Contributor
-- Archit Sharma()
+- Archit Sharma(https://github.com/archit-sharma-10)
 - Praneet Kaur()
 - Suryanandan Babbar(https://github.com/suryanandanbabbar)
