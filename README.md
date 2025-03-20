@@ -19,5 +19,5 @@ This branch introduces a graphical user interface (GUI) for simulating CPU sched
 
 ##  Contributor
 - Archit Sharma(https://github.com/archit-sharma-10)
-- Praneet Kaur()
+- Praneet Kaur(https://github.com/iamPraneetkaur)
 - Suryanandan Babbar(https://github.com/suryanandanbabbar)
