@@ -1,5 +1,5 @@
 public class Process {
-    int id, arrivalTime, burstTime, priority;
+    int id, arrivalTime, burstTime, priority, timeQuantum;
 
     public Process(int id, int arrivalTime, int burstTime, int priority) {
         this.id = id;
