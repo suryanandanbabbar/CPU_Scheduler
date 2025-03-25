@@ -8,6 +8,7 @@ public class Panel extends JFrame {
     private JTextArea resultArea;
     private ArrayList<Process> processes;
     private ArrayList<JTextField> priorityFields;
+    private JTextField timeQuantumField;
 
     public Panel() {
         setTitle("CPU Scheduler Simulator");
@@ -22,11 +23,32 @@ public class Panel extends JFrame {
         JPanel algorithmPanel = new JPanel();
         algorithmPanel.setBorder(BorderFactory.createTitledBorder("Algorithm"));
 
-        algorithmSelector = new JComboBox<>(new String[]{"FCFS", "Priority Scheduling"});
+        algorithmSelector = new JComboBox<>(new String[]{"FCFS", "Priority Scheduling","RR"});
         algorithmPanel.add(new JLabel("Select Algorithm: "));
         algorithmPanel.add(algorithmSelector);
+        
+        JLabel timeQuantumLabel = new JLabel("Time Quantum Value: ");
+
+        timeQuantumField = new JTextField(10);
+        timeQuantumField.setToolTipText("Enter Time Quantum: ");
+        
+        timeQuantumLabel.setVisible(false);
+        timeQuantumField.setVisible(false);
+
+        algorithmPanel.add(timeQuantumLabel);
+        algorithmPanel.add(timeQuantumField);
 
         add(algorithmPanel, BorderLayout.CENTER);
+        
+        algorithmSelector.addActionListener(c -> {
+            if("RR".equals(algorithmSelector.getSelectedItem())){
+                timeQuantumLabel.setVisible(true);
+                timeQuantumField.setVisible(true);
+            }else{
+                timeQuantumLabel.setVisible(false);
+                timeQuantumField.setVisible(false);
+            }
+        });
 
         // Input Panel
         inputPanel = new JPanel(new GridLayout(0, 4, 10, 10));
@@ -109,7 +131,7 @@ public class Panel extends JFrame {
             }
         }
     }
-
+    
     private void simulate() {
         try {
             processes.clear();
@@ -133,6 +155,11 @@ public class Panel extends JFrame {
                 }
             }
 
+            // Debugging
+            System.out.println("Collected Processes:");
+            processes.forEach(p -> System.out.println("ID: " + p.id + ", Arrival: " + p.arrivalTime + ", Burst: " + p.burstTime));
+            
+            // Select algorithm and simulate
             String algorithm = (String) algorithmSelector.getSelectedItem();
             if("FCFS".equals(algorithm)) {
                 FCFS fcfs = new FCFS(processes);
@@ -140,6 +167,10 @@ public class Panel extends JFrame {
             } else if ("Priority Scheduling".equals(algorithm)) {
                 PriorityScheduling ps = new PriorityScheduling(processes);
                 resultArea.setText(ps.simulate());
+            } else if ("RR".equals(algorithm)) {
+                int timeQuantum = Integer.parseInt(timeQuantumField.getText().trim());
+                RoundRobin rr = new RoundRobin(processes, timeQuantum);
+                resultArea.setText(rr.simulate());
             }
         } catch (Exception e) {
             // ERROR Message Dialog Box
