@@ -1,31 +1,46 @@
-# CPU Scheduling Simulator
+# Round Robin
 
-## Project Description
-The **CPU Scheduling Simulator** is a tool designed to help visualize and understand different CPU scheduling algorithms. It allows users to input processes with attributes like arrival time, burst time, priority and time quantum, then simulates scheduling based on the selected algorithm. This project aims to provide insights into how different scheduling techniques impact process execution.
+This branch implements the **Round Robin (RR)** CPU Scheduling Algorithm in Java with a graphical user interface (GUI).
 
-### Features:
-- Supports multiple scheduling algorithms, including FCFS, SJF, Priority, and Round Robin.
-- Dynamic input of process details.
-- Gantt chart visualization for scheduling results.
-- Calculates average waiting time and turnaround time.
-- User-friendly graphical interface for ease of use.
+## Features:
+- **Graphical Input Panel**: Users can input process ID, arrival time, burst time and the time quantum.
+- **Algorithm Selection**: Now supports **Round Robin** along with other scheduling algorithms.
+- **Gantt Chart Visualization**: Displays the process execution order.
+- **Performance Metrics**: Computes **Average Waiting Time** and **Average Turnaround Time**.
 
 ## Usage
-1. Launch the simulator.
-2. Enter process details (Process ID, Arrival Time, Burst Time, Priority or Time Quantum).
-3. Select a scheduling algorithm from the dropdown.
-4. Click "Simulate" to run the scheduling algorithm.
-5. View the generated Gantt chart and calculated metrics (waiting time, turnaround time).
+1. **Launch the Application**.
+2. **Enter Process Details**: Provide Process ID, Arrival Time, Burst Time and Time Quantum.
+3. **Select Round Robin (RR) Algorithm** from the algorithm selector's dropdown.
+4. **Click Simulate** to generate the Gantt Chart and Performance Metrics.
 
-## Future Improvements
-- Improving Gantt chart accuracy.
-- Adding more scheduling algorithms(like Multilevel Feedback Queue).
-- Implementing real-time process execution simulation.
+## Example Output
+Process(Process ID, Arrival Time, Burst Time, Priority)
+
+### Input:
+```
+P1(1, 0, 5)
+P2(2, 1, 3)
+P3(3, 2, 6)
+Time Quantum = 2
+```
+
+### Gantt Chart:
+```
+[P1: 0 - 2]
+[P2: 2 - 4]
+[P3: 4 - 6]
+[P1: 6 - 8]
+[P2: 8 - 9]
+[P3: 9 - 11]
+[P1: 11 - 12]
+[P3: 12 - 14]
+```
+### Metrices:
+```
+Average Waiting Time: 6.00
+Average Turnaround Time: 10.67
+```
 
 ## Contributors
 - Archit Sharma(https://github.com/archit-sharma-10)
-- Praneet Kaur(https://github.com/iamPraneetkaur)
-- Suryanandan Babbar(https://github.com/suryanandanbabbar)
-
-## Credits
-Dr. Anudeep Goraya, Professor, Lovely Professional University, Phagwara.
