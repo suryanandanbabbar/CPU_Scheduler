@@ -4,7 +4,7 @@ This branch implements the **Round Robin (RR)** CPU Scheduling Algorithm in Java
 
 ## Features:
 - **Graphical Input Panel**: Users can input process ID, arrival time, burst time and the time quantum.
-- **Algorithm Selection**: Now supports **Round Robin** along with other scheduling algorithms.
+- **Algorithm Selection**: Supports **Round Robin** along with other scheduling algorithms.
 - **Gantt Chart Visualization**: Displays the process execution order.
 - **Performance Metrics**: Computes **Average Waiting Time** and **Average Turnaround Time**.
 
@@ -42,5 +42,5 @@ Average Waiting Time: 6.00
 Average Turnaround Time: 10.67
 ```
 
-## Contributors
+## Contributor
 - Archit Sharma(https://github.com/archit-sharma-10)
