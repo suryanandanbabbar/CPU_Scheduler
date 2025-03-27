@@ -1,14 +1,3 @@
-// import java.util.*;
-// class RoundRobin {
-//     private final ArrayList<Process> processes;
-//     private int timeQuantum;
-
-//     public RoundRobin(ArrayList<Process> processes, int timeQuantum){
-//         this.processes = new ArrayList<>(processes);
-//         this.timeQuantum = timeQuantum;
-//     }
-    
-// }
 import java.util.*;
 
 class RoundRobin {
@@ -34,7 +23,7 @@ class RoundRobin {
         // Sort processes by arrival time
         processes.sort(Comparator.comparingInt(p -> p.arrivalTime));
     
-        // Clone processes with remaining burst time
+        // Duplicate processes with remaining burst time
         Map<Integer, Integer> remainingBurstTime = new HashMap<>();
         for (Process p : processes) {
             if (p == null) {
@@ -45,7 +34,7 @@ class RoundRobin {
     
         int index = 0;
     
-        // Check if there are any processes before accessing them
+        // Check if there are any processes
         if (!processes.isEmpty()) {
             queue.add(processes.get(index++));
         } else {
@@ -71,12 +60,12 @@ class RoundRobin {
             currentTime += executeTime;
             remainingBurstTime.put(currentProcess.id, remainingBurstTime.get(currentProcess.id) - executeTime);
     
-            // Add new processes that have arrived
+            // Add new processes
             while (index < processes.size() && processes.get(index).arrivalTime <= currentTime) {
                 queue.add(processes.get(index++));
             }
     
-            // If the process is not finished, re-add it to the queue
+            // If process is not finished, add it again to the queue
             if (remainingBurstTime.get(currentProcess.id) > 0) {
                 queue.add(currentProcess);
             } else {

@@ -140,7 +140,7 @@ public class Panel extends JFrame {
             boolean isPriorityScheduling = algorithmSelector.getSelectedItem().equals("Priority Scheduling");
 
             // Skipping the header row
-            for (int i = 4; i < components.length; i += 4) { // Skip the header row
+            for (int i = 4; i < components.length; i += 4) { 
                 if (components[i] instanceof JTextField &&
                         components[i + 1] instanceof JTextField &&
                         components[i + 2] instanceof JTextField &&
