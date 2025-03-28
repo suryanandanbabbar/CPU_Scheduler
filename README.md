@@ -19,28 +19,28 @@ This branch implements the **Shortest Job First(SJF) [Non-Preemptive]** and **Sh
 ##SJF (Non-Preemptive) Example
 
 Process(Process ID, Arrival Time, Burst Time)
-###Input:
+Input:
 ```
 P1(1, 0, 2)
 P2(2, 0, 3)
 P3(3, 0, 1)
 ```
-###Gantt Chart:
+### Gantt Chart:
 ```
 [P3: 0 - 1]
 [P1: 1 - 3]
 [P2: 3 - 6]
 ```
 
-###Metrics:
+### Metrics:
 ```
 Average Waiting Time: 1.33
 Average Turnaround Time: 3.33
 ```
 
-##SRTF (Preemptive) Example
+## SRTF (Preemptive) Example
 Process(Process ID, Arrival Time, Burst Time)
-###Input:
+### Input:
 ```
 P1(1, 0, 7)
 P2(2, 2, 4)
@@ -48,7 +48,7 @@ P3(3, 4, 1)
 P4(4, 5, 4)
 ```
 
-###Gantt Chart:
+### Gantt Chart:
 ```
 [P1: 0 - 2]
 [P2: 2 - 4]
@@ -58,11 +58,11 @@ P4(4, 5, 4)
 [P1: 12 - 16]
 ```
 
-###Metrics:
+### Metrics:
 ```
 Average Waiting Time: 5.75
 Average Turnaround Time: 10.75
 ```
 
-###Contributor
+### Contributor
 Praneet Kaur(https://gihub.com/iamPraneetkaur).
