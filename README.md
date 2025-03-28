@@ -14,12 +14,12 @@ This branch implements the **Shortest Job First(SJF) [Non-Preemptive]** and **Sh
 3. **Select SJF Algorithm** (SJF or SRTF).
 4. **Click Simulate** to generate the Gantt Chart and Performance Metrics.
 
-##Example Output
+## Example Output
 
-##SJF (Non-Preemptive) Example
+## SJF (Non-Preemptive) Example
 
 Process(Process ID, Arrival Time, Burst Time)
-Input:
+### Input:
 ```
 P1(1, 0, 2)
 P2(2, 0, 3)
