@@ -23,7 +23,7 @@ public class Panel extends JFrame {
         JPanel algorithmPanel = new JPanel();
         algorithmPanel.setBorder(BorderFactory.createTitledBorder("Algorithm"));
 
-        algorithmSelector = new JComboBox<>(new String[]{"FCFS", "Priority Scheduling","RR"});
+        algorithmSelector = new JComboBox<>(new String[]{"FCFS", "Priority Scheduling","RR", "SJF", "SRTF"});
         algorithmPanel.add(new JLabel("Select Algorithm: "));
         algorithmPanel.add(algorithmSelector);
         
