@@ -23,7 +23,7 @@ public class Panel extends JFrame {
         JPanel algorithmPanel = new JPanel();
         algorithmPanel.setBorder(BorderFactory.createTitledBorder("Algorithm"));
 
-        algorithmSelector = new JComboBox<>(new String[]{"FCFS", "Priority Scheduling","RR"});
+        algorithmSelector = new JComboBox<>(new String[]{"FCFS", "Priority Scheduling","RR", "SJF", "SRTF"});
         algorithmPanel.add(new JLabel("Select Algorithm: "));
         algorithmPanel.add(algorithmSelector);
         
@@ -171,6 +171,13 @@ public class Panel extends JFrame {
                 int timeQuantum = Integer.parseInt(timeQuantumField.getText().trim());
                 RoundRobin rr = new RoundRobin(processes, timeQuantum);
                 resultArea.setText(rr.simulate());
+            } else if ("SJF".equals(algorithm)) {
+                SJF sjf = new SJF(processes);
+                resultArea.setText(sjf.simulate());
+            }
+            else if ("SRTF".equals(algorithm)) {
+                SRTF srtf = new SRTF(processes);
+                resultArea.setText(srtf.simulate());
             }
         } catch (Exception e) {
             // ERROR Message Dialog Box
