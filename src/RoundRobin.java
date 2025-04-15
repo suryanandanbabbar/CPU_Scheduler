@@ -20,10 +20,10 @@ class RoundRobin {
         int totalWaitingTime = 0;
         int totalTurnaroundTime = 0;
     
-        // Sort processes by arrival time
+        // Sorting the processes according to the arrival time here
         processes.sort(Comparator.comparingInt(p -> p.arrivalTime));
     
-        // Duplicate processes with remaining burst time
+        // Here I map the processes with their burst times
         Map<Integer, Integer> remainingBurstTime = new HashMap<>();
         for (Process p : processes) {
             if (p == null) {
@@ -65,7 +65,7 @@ class RoundRobin {
                 queue.add(processes.get(index++));
             }
     
-            // If process is not finished, add it again to the queue
+            // If process is not finished, add it again
             if (remainingBurstTime.get(currentProcess.id) > 0) {
                 queue.add(currentProcess);
             } else {
